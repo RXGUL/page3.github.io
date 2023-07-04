@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multi-Step Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Multi-Step Form</h2>
+    <div id="step1" class="step active"> <!-- Add the "active" class here -->
+      <h3>Step 1: Basic Details</h3>
+      <form onsubmit="nextStep(event, 'step2')">
+        <!-- Step 1 fields -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <button type="submit">Next</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+    <div id="step2" class="step">
+      <h3>Step 2: Address</h3>
+      <form onsubmit="nextStep(event, 'step3')">
+        <!-- Step 2 fields -->
+        <label for="address1">Address Line 1:</label>
+        <input type="text" id="address1" name="address1" required>
+        <label for="address2">Address Line 2:</label>
+        <input type="text" id="address2" name="address2">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" required>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required>
+        <button type="submit">Next</button>
+      </form>
+    </div>
+
+   <div id="step3" class="step">
+  <h3>Step 3: File Upload</h3>
+  <form id="step3Form" onsubmit="nextStep(event, 'step4')">
+    <!-- Step 3 fields -->
+    <label for="file">Upload File:</label>
+    <input type="file" id="file" name="file" accept=".png,.pdf" required>
+
+    <!-- Phone field with country code -->
+    <label for="phone">Phone:</label>
+    <div class="phone-field">
+      <select id="countryCode">
+        <option value="+91" selected>
+          <img src="indian-flag.png" alt="Indian Flag">
+          +91
+        </option>
+        <option value="+1">
+          <img src="us-flag.png" alt="US Flag">
+          +1
+        </option>
+        <!-- Add more country options if needed -->
+      </select>
+      <input type="tel" id="phone" name="phone" required>
+    </div>
+
+    <button type="submit">Next</button>
+  </form>
+</div>
+
+
+    <div id="step4" class="step">
+      <h3>Step 4: Multi File Upload and Geolocation</h3>
+      <form id="step4Form" onsubmit="submitForm(event)">
+        <!-- Step 4 fields -->
+        <label for="multiFile">Upload Multiple Files:</label>
+        <input type="file" id="multiFile" name="multiFile" accept=".png,.pdf" multiple required>
+        <p id="geolocationStatus">Geolocation: In Progress...</p>
+        <button type="submit">Next</button>
+      </form>
+    </div>
+
+    <div id="step5" class="step">
+      <h3>Step 5: Status</h3>
+      <div id="message"></div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div id="progressBar">
+      <div id="progress"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

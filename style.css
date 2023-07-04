@@ -1,0 +1,53 @@
+/* Style for multi-step form page */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .step {
+    display: none;
+  }
+  
+  .step.active {
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  #progressBar {
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+    margin-bottom: 20px;
+  }
+  
+  #progress {
+    width: 0;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  #message {
+    font-weight: bold;
+    text-align: center;
+  }
+  .phone-field {
+    display: flex;
+    align-items: center;
+  }
+  
+  .phone-field select {
+    margin-right: 10px;
+  }
+  
+  /* Adjust the styling as per your design requirements */
+  
